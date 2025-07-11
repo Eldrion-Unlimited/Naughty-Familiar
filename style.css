@@ -10,7 +10,7 @@ body {
   font-family: 'Georgia', serif;
   background-image: url('Images/nfmainbg.png');
   background-size: cover;
-  background-position: center right;
+  background-position: center center;
   background-repeat: no-repeat;
   min-height: 100vh;
   display: flex;
