@@ -20,17 +20,6 @@ header, nav {
   font-weight: bold;
 }
 
-/* Hero Section */
-.hero {
-  background: url('Images/shopnf.png') no-repeat center center / cover;
-  height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
 /* Dark Overlay for Contrast */
 .overlay {
   background-color: rgba(0, 0, 0, 0.6);
