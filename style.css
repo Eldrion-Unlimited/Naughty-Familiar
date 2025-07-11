@@ -6,7 +6,7 @@ body {
 }
 
 .hero {
-  background: url('images/nf-hero-bg.gif') center/cover no-repeat;
+  background: url('images/nfmainbg.png') center/cover no-repeat;
   height: 100vh;
   position: relative;
 }
