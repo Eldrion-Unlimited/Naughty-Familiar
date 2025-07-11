@@ -10,7 +10,7 @@
 body {
   margin: 0;
   font-family: 'Garamond', serif;
-  background: url('nfmainbg.png') no-repeat center center fixed;
+  background: url('Images/shopnf.png') no-repeat center center fixed;
   background-size: cover;
   color: var(--white);
   overflow-x: hidden;
