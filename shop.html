@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Naughty Familiar Shop</title>
+    <link rel="stylesheet" href="shop.css" />
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Naughty Familiar Shop</h1>
+    </header>
+
+    <nav class="filters">
+        <button onclick="filterItems('keychains')">Keychains</button>
+        <button onclick="filterItems('tumblers')">Tumbler Cups</button>
+        <button onclick="filterItems('stickers')">Stickers</button>
+        <button onclick="filterItems('bookmarks')">Bookmarks</button>
+        <button onclick="filterItems('custom')">Custom Requests</button>
+    </nav>
+
+    <main id="product-list">
+        <!-- Example Product -->
+        <div class="product-item keychains">
+            <img src="keychain1.png" alt="Keychain Example">
+            <h2>Witchy Keychain</h2>
+            <p>$5.00</p>
+            <button onclick="addToCart('Witchy Keychain', 5.00)">Add to Cauldron</button>
+        </div>
+        <!-- Add more products as needed -->
+    </main>
+
+    <aside class="cart">
+        <h2>Your Cauldron</h2>
+        <ul id="cart-items"></ul>
+        <p id="total">Total: $0.00</p>
+        <button onclick="checkout()">Checkout</button>
+    </aside>
+
+    <script src="shop.js"></script>
+</body>
+</html>
