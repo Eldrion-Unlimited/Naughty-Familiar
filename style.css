@@ -21,17 +21,39 @@ body {
   overflow-x: hidden;
 }
 
+/* Animated Background Pulse */
+@keyframes backgroundFade {
+  from {
+    filter: brightness(0.95) saturate(0.9);
+  }
+  to {
+    filter: brightness(1.1) saturate(1.1);
+  }
+}
+
 /* Container Split */
 .container {
   display: flex;
   justify-content: space-between;
   width: 100%;
   max-width: 1200px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(15, 15, 15, 0.6);
   border-radius: 20px;
   padding: 2rem;
-  backdrop-filter: blur(4px);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 20px rgba(255, 20, 147, 0.6);
+  animation: floatUp 2s ease-out;
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Left Panel */
@@ -41,15 +63,16 @@ body {
 }
 
 .left-panel h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 1rem;
   color: #ffb6c1;
+  text-shadow: 0 0 6px #ff1493;
 }
 
 .left-panel p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-bottom: 2rem;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .left-panel .best-sellers {
@@ -73,18 +96,30 @@ body {
 }
 
 .right-panel a {
-  background: #ff69b4;
-  color: black;
-  padding: 0.6rem 1.4rem;
+  background: linear-gradient(45deg, #ff69b4, #8b008b);
+  color: #fff;
+  padding: 0.7rem 1.6rem;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 8px;
-  transition: background 0.3s ease;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px #ff69b4;
 }
 
 .right-panel a:hover {
-  background: #ffc0cb;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff1493;
 }
+
+/* Avoid Text Overlap */
+@media screen and (min-width: 1000px) {
+  body {
+    background-position: 75% center;
+  }
+
+  .container {
+    max-width: 1000px;
+  }
 
 /* Make Sure Nothing Overlaps Character */
 @media screen and (min-width: 1000px) {
