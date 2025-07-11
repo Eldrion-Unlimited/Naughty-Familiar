@@ -1,87 +1,104 @@
-/* Basic Reset & Background Setup */
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Playfair Display', serif;
-  background: url('images/nfmainbg.png') no-repeat center center fixed;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('nfmainbg.png') no-repeat center center fixed;
   background-size: cover;
-  color: #f5f5f5;
-  overflow-x: hidden;
-  min-height: 100vh;
-}
-
-/* Container Layout */
-.container {
+  color: white;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 60px;
-  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* Left Column */
-.left-column {
-  width: 45%;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+.main-container {
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  gap: 2rem;
+  border-radius: 16px;
+  max-width: 1000px;
+  width: 90%;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
 }
 
-.left-column h2 {
-  margin-top: 0;
-  color: #ff69b4;
-}
-
-.left-column p,
-.left-column ul {
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-/* Right Column */
-.right-column {
-  width: 45%;
+.content-left, .content-right {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   justify-content: space-between;
-  height: 100%;
 }
 
-/* Social Media Links */
+h1, h2 {
+  font-family: 'Georgia', serif;
+  color: #ffe89f;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #fffbe6;
+}
+
+.bestsellers {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.bestsellers li {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
 .social-links {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .social-links a {
-  color: #f5f5f5;
-  margin-bottom: 12px;
+  color: #ffc0cb;
   text-decoration: none;
   font-weight: bold;
-  font-size: 16px;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
 .social-links a:hover {
-  color: #ff69b4;
+  color: #ffffff;
 }
 
-/* Shop Button */
-.enter-shop {
-  margin-top: auto;
-  padding: 14px 28px;
-  background-color: #ff69b4;
+.cta-button {
+  background: #ff69b4;
   color: black;
-  border: none;
-  border-radius: 8px;
-  font-size: 18px;
+  text-align: center;
+  padding: 1rem;
   text-decoration: none;
-  transition: background-color 0.3s;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  transition: background 0.3s;
 }
 
-.enter-shop:hover {
-  background-color: #ff1493;
+.cta-button:hover {
+  background: #ffc0cb;
+}
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .content-left, .content-right {
+    align-items: center;
+  }
+
+  .cta-button {
+    width: 80%;
+    margin-top: 1rem;
+  }
 }
