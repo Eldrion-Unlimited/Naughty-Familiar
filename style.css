@@ -1,12 +1,17 @@
 body {
   margin: 0;
   font-family: 'Playfair Display', serif;
-  background-color: #1a001f;
-  color: #ffe6f9;
+  background: url("images/nfmainbg.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #f5f5f5;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+  
 }
 
 .hero {
-  background: url('images/nfmainbg.png') center/cover no-repeat;
+  background: url('images/shopnf.png') center/cover no-repeat;
   height: 100vh;
   position: relative;
 }
