@@ -26,8 +26,12 @@ document.querySelectorAll('.section-box').forEach(section => {
 const laughAudio = new Audio('laugh.mp3');
 
 document.querySelectorAll('.btn').forEach(button => {
-  button.addEventListener('mouseenter', () => {
+  const playLaugh = () => {
+    laughAudio.pause();
     laughAudio.currentTime = 0;
     laughAudio.play();
-  });
+  };
+
+  button.addEventListener('mouseenter', playLaugh);
+  button.addEventListener('click', playLaugh);
 });
