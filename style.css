@@ -64,7 +64,15 @@ body {
   margin: 10em 0;
   text-align: center;
   font-size: x-large;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease-out;
   animation: riseUp 2s ease-out;
+}
+
+.section-box.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* === BUTTONS === */
