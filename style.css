@@ -1,20 +1,21 @@
+/* === BASE STYLES === */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Playfair Display', serif;
+  color: #fff;
   background: url('Images/nfmainbg.png') no-repeat center center fixed;
   background-size: cover;
-  color: #fff;
-  scroll-behavior: smooth;
   text-shadow: 1px 1px 2px black;
+  box-sizing: border-box;
 }
 
 .container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 1em;
-  box-sizing: border-box;
+  padding: 1.5em;
+  gap: 2em;
 }
 
 .main-layout {
@@ -26,21 +27,32 @@ body {
 .left-column {
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: 1.5em;
 }
 
+/* === SECTION BOXES === */
 .section-box {
   background: rgba(0, 0, 0, 0.65);
   padding: 1.5em;
   border-radius: 1em;
   backdrop-filter: blur(4px);
+  width: 100%;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: slideIn 0.8s ease-out forwards;
 }
 
-/* This section will be hidden on small screens */
-.best-sellers {
-  display: none;
-}
+.section-box:nth-child(1) { animation-delay: 0.2s; }
+.section-box:nth-child(2) { animation-delay: 0.4s; }
+.section-box:nth-child(3) { animation-delay: 0.6s; }
 
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+/* === BUTTON BOX === */
 .button-box {
   background: rgba(0, 0, 0, 0.65);
   padding: 1.5em;
@@ -52,8 +64,18 @@ body {
   flex-direction: column;
   gap: 1em;
   text-align: center;
+  animation: slideIn 0.8s ease-out forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
+  transform: translateX(30px);
 }
 
+.button-box h2 {
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+/* === BUTTONS === */
 .btn {
   display: block;
   padding: 0.75em 1em;
@@ -63,14 +85,17 @@ body {
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
 
 .btn:hover {
-  background: rgba(80, 0, 100, 0.9);
+  background: rgba(80, 0, 100, 0.95);
+  border: 2px solid #d06bff;
+  box-shadow: 0 0 12px #d06bff;
 }
 
 .highlight {
-  background: rgba(100, 20, 120, 0.85);
+  background: rgba(120, 0, 150, 0.85);
 }
 
 footer {
@@ -79,7 +104,7 @@ footer {
   padding: 1em 0;
   background: rgba(0, 0, 0, 0.5);
   border-radius: 0.5em;
-  margin-top: 2em;
+  margin-top: auto;
 }
 
 a {
@@ -90,13 +115,18 @@ a:hover {
   color: #ffffff;
 }
 
-/* Desktop Layout */
+/* === HIDE BEST SELLERS ON MOBILE === */
+.best-sellers {
+  display: none;
+}
+
+/* === DESKTOP BREAKPOINT === */
 @media (min-width: 768px) {
   .main-layout {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 4em;
+    gap: 3em;
   }
 
   .left-column {
@@ -105,10 +135,11 @@ a:hover {
 
   .button-box {
     max-width: 30%;
+    margin: 0;
   }
 
   .best-sellers {
-    display: block; /* show on desktop */
+    display: block;
   }
 
 @keyframes glow {
