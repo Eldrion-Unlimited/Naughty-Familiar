@@ -1,4 +1,9 @@
 /* === BASE STYLES === */
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 1px;
   padding: 1px;
@@ -193,5 +198,14 @@ a:hover {
 
   footer {
     width: 100%;
+  }
+}
+
+
+/* === ULTRAWIDE SCREENS === */
+@media (min-aspect-ratio: 21/9) {
+  body {
+    background-position: center 10%;
+    background-size: contain;
   }
 }
