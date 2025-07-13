@@ -7,9 +7,10 @@ html, body {
 body {
   margin: 1px;
   padding: 1px;
+  min-height: 100vh;
   font-family: 'Playfair Display', serif;
   color: #fff;
-  background: url('Images/nfmainbg.png') no-repeat center center fixed;
+  background: url('Images/nfmainbg.png') no-repeat center top fixed;
   background-size: cover;
   text-shadow: 1px 1px 2px black;
   animation: bgFadeIn 3s ease-in-out;
@@ -69,10 +70,10 @@ body {
   margin: 10em 0;
   text-align: center;
   font-size: x-large;
+  animation: riseUp 2s ease-out;
   opacity: 0;
   transform: translateY(40px);
   transition: all 1s ease-out;
-  animation: riseUp 2s ease-out;
 }
 
 .section-box.visible {
@@ -200,7 +201,6 @@ a:hover {
     width: 100%;
   }
 }
-
 
 /* === ULTRAWIDE SCREENS === */
 @media (min-aspect-ratio: 21/9) {
