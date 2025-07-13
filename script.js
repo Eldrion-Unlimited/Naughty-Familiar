@@ -23,7 +23,8 @@ document.querySelectorAll('.section-box').forEach(section => {
 });
 
 // === Optional: Witch Laugh on Button Hover ===
-const laughAudio = new Audio('laugh.mp3'); // Place this file in your /sounds folder
+const laughAudio = new Audio('laugh.mp3');
+
 document.querySelectorAll('.btn').forEach(button => {
   button.addEventListener('mouseenter', () => {
     laughAudio.currentTime = 0;
