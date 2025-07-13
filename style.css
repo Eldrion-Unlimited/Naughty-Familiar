@@ -1,6 +1,7 @@
 /* === BASE STYLES === */
 body {
   margin: 1px;
+  margint-top: 5em
   padding: 1px;
   font-family: 'Playfair Display', serif;
   color: #fff;
@@ -49,7 +50,7 @@ align-content: center;
 text-align: center;
 flex-direction:column;
 width: 11em;
-margin-left: 53em;
+margin-left: 60em;
 object-position:right;
 orientation: landscape;
 }
