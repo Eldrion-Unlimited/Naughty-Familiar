@@ -10,37 +10,54 @@ body {
 }
 
 .container {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 1.5em;
+  padding: 1em;
   box-sizing: border-box;
-  position: relative;
 }
 
-.text-box {
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.section-box {
   background: rgba(0, 0, 0, 0.65);
   padding: 1.5em;
   border-radius: 1em;
-  max-width: 700px;
-  margin: 5em auto 2em;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(4px);
 }
 
-.header-buttons {
-  position: absolute;
-  top: 1.5em;
-  right: 1.5em;
+/* This section will be hidden on small screens */
+.best-sellers {
+  display: none;
+}
+
+.button-box {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 1.5em;
+  border-radius: 1em;
+  backdrop-filter: blur(4px);
+  max-width: 300px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: 1em;
+  text-align: center;
 }
 
 .btn {
-  padding: 0.5em 1em;
-  background: rgba(40, 0, 60, 0.7);
+  display: block;
+  padding: 0.75em 1em;
+  background: rgba(40, 0, 60, 0.8);
   color: #eee;
   border-radius: 8px;
   text-decoration: none;
@@ -53,7 +70,7 @@ body {
 }
 
 .highlight {
-  background: rgba(100, 20, 120, 0.8);
+  background: rgba(100, 20, 120, 0.85);
 }
 
 footer {
@@ -62,7 +79,7 @@ footer {
   padding: 1em 0;
   background: rgba(0, 0, 0, 0.5);
   border-radius: 0.5em;
-  margin-top: auto;
+  margin-top: 2em;
 }
 
 a {
@@ -73,30 +90,32 @@ a:hover {
   color: #ffffff;
 }
 
+/* Desktop Layout */
+@media (min-width: 768px) {
+  .main-layout {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4em;
+  }
+
+  .left-column {
+    max-width: 60%;
+  }
+
+  .button-box {
+    max-width: 30%;
+  }
+
+  .best-sellers {
+    display: block; /* show on desktop */
+  }
+
 @keyframes glow {
   0%, 100% {
     text-shadow: 0 0 5px #ff00cc, 0 0 10px #ff00cc;
   }
   50% {
     text-shadow: 0 0 15px #ff99ff, 0 0 20px #ff99ff;
-  }
-}
-
-/* Mobile Responsive */
-@media screen and (max-width: 768px) {
-  body {
-    background-position: center center;
-    padding: 1rem;
-  }
-
-  .container {
-    flex-direction: column;
-    text-align: center;
-    padding: 1rem;
-  }
-
-  .text-box {
-    padding: 0;
-    align-items: center;
   }
 }
