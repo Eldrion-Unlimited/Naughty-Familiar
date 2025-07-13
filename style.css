@@ -6,57 +6,71 @@ body {
   background-size: cover;
   color: #fff;
   scroll-behavior: smooth;
+  text-shadow: 1px 1px 2px black;
 }
 
-.main-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 5vw;
-  gap: 5vw;
-  color: #fff;
-}
-
-.left-column {
-  flex: 1;
-  max-width: 50%;
-}
-
-.right-column {
-  flex: 1;
-  max-width: 45%;
+.container {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  text-align: right;
+  min-height: 100vh;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.5em;
+  box-sizing: border-box;
+  position: relative;
 }
 
-.right-column a {
-  display: inline-block;
-  margin: 10px 0;
-  padding: 12px 20px;
-  background: rgba(0, 0, 0, 0.5);
+.text-box {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 1.5em;
+  border-radius: 1em;
+  max-width: 700px;
+  margin: 5em auto 2em;
+  backdrop-filter: blur(3px);
+}
+
+.header-buttons {
+  position: absolute;
+  top: 1.5em;
+  right: 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.btn {
+  padding: 0.5em 1em;
+  background: rgba(40, 0, 60, 0.7);
+  color: #eee;
   border-radius: 8px;
-  color: #ffcbcb;
-  font-weight: bold;
   text-decoration: none;
+  font-weight: bold;
   transition: all 0.3s ease;
-  animation: glow 1.2s ease-in-out infinite;
 }
 
-.right-column a:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: scale(1.05);
+.btn:hover {
+  background: rgba(80, 0, 100, 0.9);
+}
+
+.highlight {
+  background: rgba(100, 20, 120, 0.8);
 }
 
 footer {
   text-align: center;
-  padding: 20px;
   font-size: 0.9em;
-  color: #ddd;
-  background: rgba(0, 0, 0, 0.3);
+  padding: 1em 0;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0.5em;
+  margin-top: auto;
+}
+
+a {
+  color: #d9a3ff;
+}
+
+a:hover {
+  color: #ffffff;
 }
 
 @keyframes glow {
@@ -81,19 +95,8 @@ footer {
     padding: 1rem;
   }
 
-  .left-panel,
-  .right-panel {
+  .text-box {
     padding: 0;
     align-items: center;
-  }
-
-  .right-panel {
-    margin-top: 1.5rem;
-    gap: 0.8rem;
-  }
-
-  .right-panel a {
-    width: 80%;
-    text-align: center;
   }
 }
