@@ -37,20 +37,25 @@ body {
   border-radius: 1em;
   backdrop-filter: blur(4px);
   width: 100%;
-  opacity: 0;
-  transform: translateX(-30px);
-  animation: slideIn 0.8s ease-out forwards;
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeslideIn 1.0s ease-out forwards;
 }
 
 .section-box:nth-child(1) { animation-delay: 0.2s; }
 .section-box:nth-child(2) { animation-delay: 0.4s; }
 .section-box:nth-child(3) { animation-delay: 0.6s; }
 
-@keyframes slideIn {
-  to {
-    opacity: 1;
-    transform: translateX(0);
+@keyframes fadeslideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
   }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* === BUTTON BOX === */
 .button-box {
@@ -58,26 +63,26 @@ body {
   padding: 1.5em;
   border-radius: 1em;
   backdrop-filter: blur(4px);
+  width: 100%
   max-width: 300px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
+  align-self: center;
   text-align: center;
-  animation: slideIn 0.8s ease-out forwards;
-  animation-delay: 0.8s;
+  animation: fadeslideIn 1.0s ease-out forwards;
+  animation-delay: 1.0s;
   opacity: 0;
-  transform: translateX(30px);
+  transform: translateY(20px);
 }
 
 .button-box h2 {
   margin-top: 0;
   font-size: 1.2em;
+  color: #fff;
 }
 
 /* === BUTTONS === */
 .btn {
   display: block;
+  margin: 0.5em 0;
   padding: 0.75em 1em;
   background: rgba(40, 0, 60, 0.8);
   color: #eee;
@@ -91,7 +96,7 @@ body {
 .btn:hover {
   background: rgba(80, 0, 100, 0.95);
   border: 2px solid #d06bff;
-  box-shadow: 0 0 12px #d06bff;
+  box-shadow: 0 0 10px #d06bff;
 }
 
 .highlight {
@@ -126,7 +131,6 @@ a:hover {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 3em;
   }
 
   .left-column {
